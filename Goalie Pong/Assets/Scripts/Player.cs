@@ -5,21 +5,20 @@ using UnityEngine;
 public class Player : Paddle
 {
     Vector2 _direction;
-
+    IInput _input= new PcInput();
     private void Update()
     {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        
+        if (_input.IsMoving)
         {
-            _direction = Vector2.up;
+            Vector2 dir = _input.VerticalInput;
+            if (dir.x < 0)
+            {
+                _direction = dir;  
+            }           
+
         }
-        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-        {
-            _direction = Vector2.down;
-        }
-        else
-        {
-            _direction = Vector2.zero;
-        }
+
     }
 
     private void FixedUpdate()

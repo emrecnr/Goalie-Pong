@@ -51,3 +51,9 @@ TagManager:
   - name: Ball
     uniqueID: 896829363
     locked: 0
+  - name: GoalArea
+    uniqueID: 3317616815
+    locked: 0
+  - name: GoalText
+    uniqueID: 3683959749
+    locked: 0
